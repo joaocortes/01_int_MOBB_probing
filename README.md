@@ -1,6 +1,6 @@
 # Enhancing Branch-and-Bound for Multi-Objective 0-1 Programming
 
-This contains the C++ code for the branch-and-bound algorithm implemented in the paper N. Forget, S.N. Parragh, "Enhancing Branch-and-bound for Multi-Objective 0-1 Programming", INFORMS Journal on Computing, 2023. Below are detailed the different parameters and the configurations used for each section of the experiments. All files where compiled using Visual Studio 2022 on Windows. The main function is contained in project2.cpp.
+This contains the C++ code for the branch-and-bound algorithm implemented in the paper N. Forget, S.N. Parragh, "Enhancing Branch-and-bound for Multi-Objective 0-1 Programming", INFORMS Journal on Computing, 2023. Below are detailed the different parameters and the configurations used for each section of the experiments. The experiments were carried out on a local cluster using Debian GNU / Linux 10.3, but all files where primarily compiled using Visual Studio 2022 on Windows 10. The main function is contained in project2.cpp.
 
 ## Parameters
 
