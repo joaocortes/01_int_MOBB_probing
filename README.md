@@ -139,3 +139,4 @@ The following configurations are tested / parameters are compared.
 
 * For UFLP
     * BB-E : instance 103 204 306 401 3600 2 1 0 0 14
+    
