@@ -13,7 +13,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
-#include <ilcplex\ilocplex.h>
+#include <ilcplex/ilocplex.h>
 #include "GlobalConstants.h"
 #include "solution.h"
 
