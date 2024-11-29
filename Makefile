@@ -15,6 +15,7 @@ MAIN  = SYNCmain
 
 all: $(MAIN)
 
+SRC_DIR=code
 SRC = \
 project2.cpp \
 BranchAndBound.cpp \
@@ -28,15 +29,17 @@ Point.cpp \
 Hyperplane.cpp \
 Lub.cpp \
 SLUB.cpp \
-GlobalLB.cpp \
+GlobalLB.cpp
 
-OBJ = $(SRC:%.cpp=%.o) 
+SRC_P = $(addprefix $(SRC_DIR)/, $(SRC))
+
+OBJ = $(SRC_P:%.cpp=%.o) 
 
 $(MAIN):  $(OBJ)
 	$(LD) $(BUILDFLAGS) $(OBJ) -o $(MAIN) $(LDFLAGS)
 
-%.o:%.cpp *.h
+$(SRC_DIR)/%.o: $(SRC_DIR)/%.cpp $(SRC_DIR)/*.h
 	$(CXX) -c $(BUILDFLAGS) $(CXXFLAGS) $< -o $(<:%.cpp=%.o)
 
 clean:
-	rm -f *.o $(MAIN) && chmod -x *.h *.cpp Makefile
+	-rm -f  $(MAIN) $(OBJ) && chmod -x *.h *.cpp Makefile
