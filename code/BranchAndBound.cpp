@@ -455,11 +455,11 @@ void BranchAndBound::writeStatistics() {
     file << stat.timeCopyLB.CumulativeTime("sec") << ",";
 
     // OB
-    file << stat.avgDepthOB / max(stat.nbOccurencesOB,1) << ",";
+    file << stat.avgDepthOB / std::max(stat.nbOccurencesOB,1) << ",";
     std::cout << stat.avgDepthOB;
     file << stat.minDepthOB << ",";
     file << stat.maxDepthOB << ",";
-    file << stat.avgSubPbOB / max(stat.nbOccurencesOB, 1) << ",";
+    file << stat.avgSubPbOB / std::max(stat.nbOccurencesOB, 1) << ",";
     file << stat.minSubPbOB << ",";
     file << stat.maxSubPbOB << ",";
     file << stat.nbOccurencesOB << ",";
@@ -551,7 +551,7 @@ void BranchAndBound::writeDepthStatistics() {
         file << stat.newFacetsNoRay[d] / (stat.nbNodesAtStage[d] - stat.nbInfeasibleNodes[d]) << ",";
         file << stat.avgIntegerVtx[d] / (stat.nbNodesAtStage[d] - stat.nbInfeasibleNodes[d]) << ",";
         file << stat.nodesOBPerDepth[d] << ",";
-        file << stat.avgSubPbOBPerDepth[d] / max(stat.nodesOBPerDepth[d], 1) << ",";
+        file << stat.avgSubPbOBPerDepth[d] / std::max(stat.nodesOBPerDepth[d], 1) << ",";
         file << stat.minSubPbOBPerDepth[d] << "," << stat.maxSubPbOBPerDepth[d] << "\n";
     }
 
@@ -869,7 +869,7 @@ void BranchAndBound::writeStatProbing() {
     //file << P.epsOB << ",";
     file << stat.nbOccurencesOB << ",";
     file << 100 * double(stat.nbOccurencesOB) / double(stat.nbNodes) << ",";
-    file << stat.avgSubPbOB / max(stat.nbOccurencesOB,1) << ",";
+    file << stat.avgSubPbOB / std::max(stat.nbOccurencesOB,1) << ",";
 
     file << T.size() << ",";
     
